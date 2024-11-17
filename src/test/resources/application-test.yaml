@@ -1,0 +1,25 @@
+server:
+  port: 8081
+  shutdown: graceful
+  max-http-request-header-size: 1024KB
+service:
+  environment: test
+spring:
+  application:
+    name: spring-redis
+
+  data:
+    redis:
+      host: redis://localhost
+      port: 6379
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/sia?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: sia
+    password: siatest
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
